@@ -1,0 +1,31 @@
+[package]
+name = "bintest_helper"
+version = "0.1.0"
+description = "Rebuild your binary when unit-testing with e.g. assert_cmd"
+authors = ["Tom van Dijk <18gatenmaker6@gmail.com>"]
+categories = ["development-tools::testing"]
+edition = "2018"
+keywords = ["testing", "assert_cmd", "macro"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/dtomvan/bintest-helper"
+homepage = "https://github.com/dtomvan/bintest-helper"
+documentation = "https://docs.rs/bintest_helper"
+include = ["/src", "/examples"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+proc-macro2 = "1.0.29"
+quote = "1.0.10"
+
+[dependencies.syn]
+version = "1.0.80"
+features = ["full", "extra-traits"]
+
+[lib]
+proc_macro = true
+path = "src/lib.rs"
+
+[dev-dependencies]
+assert_cmd = "2.0.2"
